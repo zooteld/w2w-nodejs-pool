@@ -1,4 +1,4 @@
-Ombre-Node.js-pool
+W2W-Nodejs-pool
 ======================
 
 High performance Node.js (with native C addons) mining pool for CryptoNote based coins. Comes with lightweight example front-end script which uses the pool's AJAX API. Support for Cryptonight (Original, Monero v7, Stellite v7), Cryptonight Light (Original, Aeon v7, IPBC) and Cryptonight Heavy (Sumokoin) algorithms.
@@ -155,7 +155,7 @@ sudo su - your-user
 Clone the repository and run `npm update` for all the dependencies to be installed:
 
 ```bash
-git clone https://github.com/dvandal/cryptonote-nodejs-pool.git pool
+git clone https://github.com/w2w-coin/w2w-nodejs-pool pool
 cd pool
 
 npm update
@@ -164,17 +164,17 @@ npm update
 #### 2) Configuration
 
 #Easy Setup...
-Open the ombre-example.json and make the following changes
+Open the config.json and make the following changes
 change the pool address under "poolHost"
 change the Pool Wallet under "poolServer" / "poolAddress"
-The addressValidatorBin under "poolServer" / "addressValidatorBin" must point to the binary in the Ombre folder
 change the Api Password under "api" / "password"
+change the wallet port under "wallet" / "port"
 and you will be good to run the pool...
 
 If you choose to charge a pool fee change that in the "blockUnlocker" / "poolFee"
 its currently set to 0 but that is the pool opperator's choice...
 
-Save the changes then rename the ombre-example.json to config.json and run pool with node init.js...
+Save the changes to config.json and run pool with node init.js...
 
 #Advanced Setup...
 
@@ -622,10 +622,12 @@ sudo systemctl start cryptonote-nodejs-pool.service
 
 #### 4) Host the front-end
 
-Simply host the contents of the `website_example` directory on file server capable of serving simple static files.
+The frontend is sourced from the w2w-frontend git repository.
 
+move to your /var/www/html/ directory then clone the repository.
+'cd /var/www/html/ && git clone https://github.com/w2w-coin/w2w-frontend.git temp && cd temp && mv * .. && cd .. && rm -r temp' 
 
-Edit the variables in the `website_example/config.js` file to use your pool's specific configuration.
+Edit the variables in the `config.js` file to use your pool's specific configuration.
 Variable explanations:
 
 ```javascript
