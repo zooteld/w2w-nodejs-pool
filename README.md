@@ -625,7 +625,7 @@ sudo systemctl start cryptonote-nodejs-pool.service
 The frontend is sourced from the w2w-frontend git repository.
 
 move to your /var/www/html/ directory then clone the repository.
-`cd /var/www/html/ && git clone https://github.com/w2w-coin/w2w-frontend.git temp && cd temp && mv * .. && cd .. && rm -r temp` 
+`cd /var/www/html/ && git clone https://github.com/zooteld/w2w-frontend temp && cd temp && mv * .. && cd .. && rm -r temp` 
 
 Edit the variables in the `config.js` file to use your pool's specific configuration.
 Variable explanations:
